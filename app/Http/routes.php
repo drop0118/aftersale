@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['uses' => 'IndexController@index']);
+Route::get('brand-search', ['uses' => 'IndexController@brandSearch']);
+Route::get('brand/{name}', ['uses' => 'IndexController@brand']);

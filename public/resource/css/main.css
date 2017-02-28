@@ -1,0 +1,30 @@
+header{
+	font-family: "SF Pro SC","HanHei SC","SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+footer{
+	height: 100px;
+	bottom: 0px;
+}
+.black-level1{color: #333;}
+.black-level2{color: #666;}
+.black-level3{color: #999;}
+.black-level4{color: #ddd;}
+
+.index-header{
+	height: 150px;
+	margin-top: 50px;
+}
+.common-title{
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #ddd;
+	font-size: 16px;
+}
+.common-title span{
+	display: inline-block;
+	padding: 0px 20px;
+	border-bottom: 3px solid #666;
+	height: 41px;
+}
+.mt20{margin-top: 20px;}
+.mt30{margin-top: 30px;}
