@@ -1,0 +1,40 @@
+【问题】
+- policy与每一笔referral的交易之间存在什么样的关系呢？是否policy就是保单，每一个referral成交之后就会有一个policy？因为我看到broker需要在完成交易后上传policy。
+- partner可以在发布referral的时候添加insurable type，那么这个type就是broker在其管理界面添加的吗？貌似没有看到文档有说broker可以在哪里添加这个type。
+- 评分能否头论一下需要设计成什么样的呢？我困惑在，现在每个角色都有一个总评分，这个总分由多个因素构成，但是有的因素的值是百分比，有的是boolean，所以需要讨论一下哦，另外The Chimera Algorithm我没理解。
+- Zoho的CRM是给管理员用的吗？在业务逻辑里面ZOHO是不需要给partner和broker用的吧？
+- 关于broker的银行卡支付信息，我们是否要保存呢？
+
+【规划】
+- 阶段1（2月20日-3月5日）
+	基础架构和底层逻辑实现阶段。
+	- broker，partner操作逻辑，操作页面规划
+	- 选定UI风格，开始制作静态页面
+	- 前端controller，view，service规划
+	- 前端service制作
+		- partnerService
+		- brokerService
+	- 后端controller，model，repository，client规划
+	- 后端repository制作
+		- BrokerRepository
+		- PartnerRepository
+
+- 阶段2（3月6日-3月19日）
+	前端功能开发，核心逻辑实现阶段。
+	- 前端admin管理后台制作
+	- 前端整合已有接口
+	- 后端Client制作
+		- ZOHO
+		- sparrow
+		- aws queue
+	- 后端评分系统
+	- 后端自动扣款功能
+	- 后端repository制作
+		- ReferralRepository
+	- 后端整合第三方接口进核心逻辑
+
+- 阶段3（3月20日-4月2日）
+	前后端整合与测试阶段。
+
+- 阶段4（4月3日-4月16日）
+	最终测试，BUG修正，需求修正阶段。

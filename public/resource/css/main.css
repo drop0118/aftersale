@@ -28,3 +28,25 @@ footer{
 }
 .mt20{margin-top: 20px;}
 .mt30{margin-top: 30px;}
+
+.number_content{
+	border:1px solid #ddd;
+}
+.number_content .number_index a{
+	display: block;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background: #f9f9f9;
+	color: #333;
+}
+.brand_content a{
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+.hover{
+	background: white !important;
+}
