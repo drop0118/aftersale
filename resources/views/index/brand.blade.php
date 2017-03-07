@@ -41,7 +41,7 @@
 			</div>
 			<div class="col-xs-12 mt20">
 				<div class="common-title">
-					<span>官方售后服务网点</span>
+					<span>{{$brand->name}}官方售后服务网点</span>
 				</div>
 			</div>
 			<div class="col-xs-12">
