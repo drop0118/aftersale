@@ -11,8 +11,8 @@
 			<span>品牌简介</span>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-xs-9">
+	<div class="col-xs-9">
+		<div class="row">
 			@if ($brand->logo_url)
 			<div class="col-xs-3 mt20">
 				<img style="height: 90px;" alt="{{$brand->name}}品牌LOGO" src="{{$brand->logo_url}}">
@@ -81,10 +81,10 @@
 			</div>
 			<div class="col-xs-12">{{$stores->links()}}</div>
 		</div>
-		<div class="col-xs-3">
-		<!-- taobao ad. -->
-			<a data-type="3" data-tmpl="250x250" data-tmplid="185" data-rd="2" data-style="2" data-border="1" href="#"></a>
-		</div>
+	</div>
+	<div class="col-xs-3">
+	<!-- taobao ad. -->
+		<a data-type="3" data-tmpl="250x250" data-tmplid="185" data-rd="2" data-style="2" data-border="1" href="#"></a>
 	</div>
 </div>
 
