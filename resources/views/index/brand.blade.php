@@ -54,7 +54,8 @@
 						</tr>
 					</thead>
 					<tbody>
-					@foreach ($stores as $store)
+					@if ($stores->total())
+						@foreach ($stores as $store)
 						<tr>
 							<td style="line-height: 30px;">
 								{{$store->name}}<br />
@@ -67,7 +68,14 @@
 								{{$store->phone}}
 							</td>
 						</tr>
-					@endforeach
+						@endforeach
+					@else
+						<tr>
+							<td colspan="3" class="text-center black-level3" style="line-height: 100px;">
+								<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 您所在的地区未查询到服务网点
+							</td>
+						</tr>
+					@endif
 					</tbody>
 				</table>
 			</div>
