@@ -5,6 +5,11 @@ footer{
 	height: 100px;
 	bottom: 0px;
 }
+
+.container{
+	width: 1020px;
+}
+
 .black-level1{color: #333;}
 .black-level2{color: #666;}
 .black-level3{color: #999;}

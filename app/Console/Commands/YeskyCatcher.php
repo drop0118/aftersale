@@ -47,11 +47,17 @@ class YeskyCatcher extends Command
                 continue;
             $brand_content = $this->_getContent($_brand->url, $client);
             preg_match('/关于(.+?)<\/h2>/ius', $brand_content, $match_brand_title);
+            if(!@$match_brand_title[1])
+                continue;
             $brand = Brand::where('name', $match_brand_title[1])->first();
             preg_match('/brand\/\d+\/(\d+?)\//i', $_brand->url, $match_brand_code);
+            if(!@$match_brand_code[1])
+                continue;
             # 获得总页数
             $start_page_content = $this->_getContent('http://product.yesky.com/front/maintaincenter/maintainbrand.do?brandId='.$match_brand_code[1].'&productId=0&regionId=0&cityId=0&pageNo=1&pageSize=10&fromPage=1', $client);
             preg_match('/显示(\d+)条，共(\d+)条/is', $start_page_content, $match_pager);
+            if(!@$match_pager[1])
+                continue;
             $total_page = ceil($match_pager[2] / $match_pager[1]);
             for ($i=1; $i < $total_page; $i++) { 
                 $per_page_content = $this->_getContent('http://product.yesky.com/front/maintaincenter/maintainbrand.do?brandId='.$match_brand_code[1].'&productId=0&regionId=0&cityId=0&pageNo='.$i.'&pageSize=10&fromPage=1', $client);
@@ -121,7 +127,7 @@ class YeskyCatcher extends Command
             $content = $request->getBody()->getContents();
             if( $content ) {
                 if(json_encode($content) == null)
-                    $content = iconv('gbk', 'utf-8', $content);
+                    $content = iconv('gbk//IGNORE', 'utf-8//IGNORE', $content);
                 $catch_content = new CatchContent();
                 $catch_content->url = $url;
                 $catch_content->content = $content;
