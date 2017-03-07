@@ -73,7 +73,10 @@
 			</div>
 			<div class="col-xs-12">{{$stores->links()}}</div>
 		</div>
-		<div class="col-xs-3"></div>
+		<div class="col-xs-3">
+		<!-- taobao ad. -->
+			<a data-type="3" data-tmpl="250x250" data-tmplid="185" data-rd="2" data-style="2" data-border="1" href="#"></a>
+		</div>
 	</div>
 </div>
 
