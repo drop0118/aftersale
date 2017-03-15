@@ -66,7 +66,7 @@ class IndexController extends Controller
 		if( $city ) {
 			$current_city = $city;
 		}
-		$query = $query->where('address', 'like', '%'.$current_city.'%');
+		$query = $query->where('address', 'like', '%'.$current_city.'市%');
 		$limit = 10;
 		$offset = max($page - 1, 0) * $limit;
 		$stores = $query->paginate(10);
