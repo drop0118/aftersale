@@ -44,6 +44,13 @@
 					<span>{{$brand->name}}官方售后服务网点</span>
 				</div>
 			</div>
+			<div class="col-xs-12 ">
+				<div class="city_area">
+				@foreach ($city_map as $city)
+					<a href="{{url('brand/'.$brand->name.'/'.$city)}}" class="{{$city == $current_city ? 'active' : ''}}">{{$city}}</a>
+				@endforeach
+				</div>
+			</div>
 			<div class="col-xs-12">
 				<table class="table table-hover table-striped">
 					<thead>
@@ -58,8 +65,8 @@
 						@foreach ($stores as $store)
 						<tr>
 							<td style="line-height: 30px;">
-								{{$store->name}}<br />
-								{{$store->address}}
+								{{$store->address}}<br />
+								<span class="black-level3">{{$store->name}}</span>
 							</td>
 							<td>
 								-

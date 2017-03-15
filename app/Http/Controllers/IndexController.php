@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Cache;
 use App\Brand;
+use App\Store;
 use App\Http\Requests;
 use App\Infrastructure\Helper;
 
@@ -53,25 +54,28 @@ class IndexController extends Controller
 		}
 	}
 
-	public function brand(Request $request, Helper $helper, $name, $page = 1)
+	public function brand(Request $request, Helper $helper, $name, $city = false, $page = 1)
 	{
 		$brand = Brand::where('name', $name)->first();
 		if(!$brand) {
 			return redirect('/');
 		}
 		$query = $brand->stores();
-		if($area_info = $helper->getIpInfo($request->getClientIp())) {
-			$query = $query->where('address', 'like', '%'.$area_info['city'].'%');
-		} else {
-			$query = $query->orderByRaw('RAND()');
+		$area_info = $helper->getIpInfo($request->getClientIp());
+		$current_city = $area_info ? $area_info['city'] : Store::$city_map[0];
+		if( $city ) {
+			$current_city = $city;
 		}
+		$query = $query->where('address', 'like', '%'.$current_city.'%');
 		$limit = 10;
 		$offset = max($page - 1, 0) * $limit;
 		$stores = $query->paginate(10);
 
 		return view('index.brand', [
-			'brand' => $brand,
-			'stores' => $stores,
+			'brand' 	   => $brand,
+			'stores'	   => $stores,
+			'city_map' 	   => Store::$city_map,
+			'current_city' => $current_city
 		]);
 	}
 

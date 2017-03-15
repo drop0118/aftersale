@@ -43,7 +43,7 @@ class YeskyCatcher extends Command
         $brand_list = CatchContent::where('url', 'like', '%/brand%')->get();
         $total_count = count($brand_list);
         foreach ($brand_list as $k => $_brand) {
-            if($k <= 1290)
+            if($k <= 2163)
                 continue;
             $brand_content = $this->_getContent($_brand->url, $client);
             preg_match('/关于(.+?)<\/h2>/ius', $brand_content, $match_brand_title);

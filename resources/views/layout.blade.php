@@ -12,7 +12,9 @@
             <header class="row"></header>
             @yield('content')
             <footer class="row">
-                <div class="col-xs-12"></div>
+                <div class="col-xs-12">
+                    沪ICP备17010071号
+                </div>
             </footer>
         </div>
         <script>
