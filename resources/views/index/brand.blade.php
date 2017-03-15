@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', $brand->name.'-')
+@section('title', $brand->name.'_'.$current_city.'-')
 @section('content')
 
 <div class="row mt20">
