@@ -1,5 +1,7 @@
 @extends('layout')
-@section('title', 'E售后-')
+@section('title', '官方售后服务、维修 - 电话、网点地址大全 -')
+@section('keyword', '官方售后服务,官方授权维修,售后,客服热线,维修电话,维修网点地址,门店,保修,全国联保')
+@section('description', 'e售后网收录了数百个品牌产品的官方售后服务维修的电话、网点信息。数据真实、安全、可靠，供消费者免费参考。我们支持保护消费者权益，避免消费者在售后服务过程中遇见李鬼。')
 @section('content')
 
 <div class="row">
