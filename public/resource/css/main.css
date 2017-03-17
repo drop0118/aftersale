@@ -70,6 +70,7 @@ footer{
     line-height: 31px;
     padding: 0px 0px;
     width: 88px;
+    text-align: center;
 }
 .city_area .active{
 	font-weight: bold;
