@@ -93,7 +93,7 @@
 	</div>
 	<div class="col-xs-3 mt20">
 		<!-- taobao ad. -->
-		<a data-type="3" data-tmpl="220x290" data-tmplid="29" data-rd="2" data-style="2" data-border="1" href="#"></a>
+		<a data-type="2" biz-keyword="{{$brand->name}}" data-tmpl="220x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#">{{$brand->name}}</a>
 	</div>
 </div>
 <script type="text/javascript">
