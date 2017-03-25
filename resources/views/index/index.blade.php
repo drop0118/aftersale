@@ -7,8 +7,17 @@
 <div class="row">
 	<div class="col-xs-12 text-center index-header">
         <h1>E售后</h1>
-        <h4 class="black-level3">品牌产品官方售后维修服务信息查询平台</h4>
+        @<h1 class="black-level3">品牌产品官方售后服务信息查询</h1>
+        <h1>品牌产品官方售后服务信息查询</h1>
     </div>
+<div class="row">
+<a href="/brand/苹果">苹果/Apple官方售后</a> . <a href="/brand/华为">华为/Huawei官方售后</a> . <a href="/brand/小米">小米/Xiaomi官方售后</a> . <a href="/brand/三星">三星/Sumsung官方售后</a> . <a href="/brand/魅族">魅族/Meizu官方售后</a><br>
+<a href="/brand/乐视">乐视官方售后</a> . <a href="/brand/金立">金立官方售后</a> . <a href="/brand/努比亚">努比亚官方售后</a> . <a href="/brand/vivo">vivo官方售后</a> . <a href="/brand/OPPO">OPPO官方售后</a><br>
+</div>
+
+<div class="row">
+</div>
+
     <div class="col-xs-12">
 		<form class="" action="<?php echo url('brand-search');?>">
 			<div class="form-group form-group-lg">
@@ -17,12 +26,24 @@
 				</div>
 				<button class="btn btn-success col-xs-2 btn-lg">
 					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-					查询售后
+					查询官方售后服务信息
 				</button>
 			</div>
 		</form>
 	</div>
 </div>
+
+		<div class="common-title">
+			<span>最近/常用搜索</span>
+		</div>
+<div>
+
+
+</div>
+
+
+
+
 <div class="row mt30">
 	<div class="col-xs-12">
 		<div class="common-title">
