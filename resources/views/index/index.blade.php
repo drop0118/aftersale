@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title', '官方售后服务、维修 - 电话、网点地址大全 -')
 @section('keyword', '官方售后服务,官方授权维修,售后,客服热线,维修电话,维修网点地址,门店,保修,全国联保')
-@section('description', 'e售后网收录了数百个品牌产品的官方售后服务维修的电话、网点信息。数据真实、安全、可靠，供消费者免费参考。我们支持保护消费者权益，避免消费者在售后服务过程中遇见李鬼。')
+@section('description', 'e售后网收录了数千个品牌产品的官方售后服务维修的电话、网点信息。数据真实、安全、可靠，供消费者免费参考。我们支持保护消费者权益，避免消费者在售后服务过程中遇见李鬼。')
 @section('content')
 
 <div class="row">
@@ -11,8 +11,22 @@
         <h1>品牌产品官方售后服务信息查询</h1>
     </div>
 <div class="row">
-<a href="/brand/苹果">苹果/Apple官方售后</a> . <a href="/brand/华为">华为/Huawei官方售后</a> . <a href="/brand/小米">小米/Xiaomi官方售后</a> . <a href="/brand/三星">三星/Sumsung官方售后</a> . <a href="/brand/魅族">魅族/Meizu官方售后</a><br>
-<a href="/brand/乐视">乐视官方售后</a> . <a href="/brand/金立">金立官方售后</a> . <a href="/brand/努比亚">努比亚官方售后</a> . <a href="/brand/vivo">vivo官方售后</a> . <a href="/brand/OPPO">OPPO官方售后</a><br>
+<table>
+<tr>
+<th><a href="/brand/苹果">苹果/Apple官方售后</a></th>
+<th><a href="/brand/华为">华为/Huawei官方售后</a></th>
+<th><a href="/brand/小米">小米/Xiaomi官方售后</a></th>
+<th><a href="/brand/三星">三星/Sumsung官方售后</a></th>
+<th><a href="/brand/魅族">魅族/Meizu官方售后</a></th>
+</tr>
+<tr>
+<th><a href="/brand/乐视">乐视官方售后</a></th>
+<th><a href="/brand/金立">金立官方售后</a></th>
+<th><a href="/brand/努比亚">努比亚官方售后</a></th>
+<th><a href="/brand/vivo">vivo官方售后</a></th>
+<th><a href="/brand/OPPO">OPPO官方售后</a></th>
+</tr>
+</table>
 </div>
 
 <div class="row">
