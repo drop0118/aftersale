@@ -10,7 +10,24 @@
         <h1>品牌产品官方售后服务信息查询</h1>
     </div>
 </div>
+
 <div class="row">
+    <div class="col-xs-12">
+		<form class="" action="<?php echo url('brand-search');?>">
+			<div class="form-group form-group-lg">
+				<div class=" col-xs-9" style="padding-left: 0px;">
+					<input type="text" name="keyword" class="form-control" placeholder="输入您想搜索的品牌名称">
+				</div>
+				<button class="btn btn-success col-xs-3 btn-lg">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					查询官方售后服务信息
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div class="row mt20">
 	<table class="col-xs-12">
 		<tr>
 			<td><a class="btn btn-link" href="/brand/苹果">苹果/Apple官方售后</a></td>
@@ -29,22 +46,7 @@
 	</table>
 </div>
 
-<div class="row">
-    <div class="col-xs-12">
-		<form class="" action="<?php echo url('brand-search');?>">
-			<div class="form-group form-group-lg">
-				<div class=" col-xs-9" style="padding-left: 0px;">
-					<input type="text" name="keyword" class="form-control" placeholder="输入您想搜索的品牌名称">
-				</div>
-				<button class="btn btn-success col-xs-3 btn-lg">
-					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-					查询官方售后服务信息
-				</button>
-			</div>
-		</form>
-	</div>
-</div>
-<div class="row mt30">
+<div class="row mt20">
 	<div class="col-xs-12">
 		<div class="common-title">
 			<span>最近/常用搜索</span>
@@ -75,7 +77,7 @@
 		</table>
 	</div>
 </div>
-<div class="row mt30">
+<div class="row mt20">
 	<div class="col-xs-12">
 		<div class="common-title">
 			<span>所有品牌</span>
