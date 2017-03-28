@@ -13,18 +13,18 @@
 <div class="row">
 	<table class="col-xs-12">
 		<tr>
-			<td><a class="btn" href="/brand/苹果">苹果/Apple官方售后</a></td>
-			<td><a class="btn" href="/brand/华为">华为/Huawei官方售后</a></td>
-			<td><a class="btn" href="/brand/小米">小米/Xiaomi官方售后</a></td>
-			<td><a class="btn" href="/brand/三星">三星/Sumsung官方售后</a></td>
-			<td><a class="btn" href="/brand/魅族">魅族/Meizu官方售后</a></td>
+			<td><a class="btn btn-link" href="/brand/苹果">苹果/Apple官方售后</a></td>
+			<td><a class="btn btn-link" href="/brand/华为">华为/Huawei官方售后</a></td>
+			<td><a class="btn btn-link" href="/brand/小米">小米/Xiaomi官方售后</a></td>
+			<td><a class="btn btn-link" href="/brand/三星">三星/Sumsung官方售后</a></td>
+			<td><a class="btn btn-link" href="/brand/魅族">魅族/Meizu官方售后</a></td>
 		</tr>
 		<tr>
-			<td><a class="btn" href="/brand/乐视">乐视官方售后</a></td>
-			<td><a class="btn" href="/brand/金立">金立官方售后</a></td>
-			<td><a class="btn" href="/brand/努比亚">努比亚官方售后</a></td>
-			<td><a class="btn" href="/brand/vivo">vivo官方售后</a></td>
-			<td><a class="btn" href="/brand/OPPO">OPPO官方售后</a></td>
+			<td><a class="btn btn-link" href="/brand/乐视">乐视官方售后</a></td>
+			<td><a class="btn btn-link" href="/brand/金立">金立官方售后</a></td>
+			<td><a class="btn btn-link" href="/brand/努比亚">努比亚官方售后</a></td>
+			<td><a class="btn btn-link" href="/brand/vivo">vivo官方售后</a></td>
+			<td><a class="btn btn-link" href="/brand/OPPO">OPPO官方售后</a></td>
 		</tr>
 	</table>
 </div>
@@ -49,6 +49,30 @@
 		<div class="common-title">
 			<span>最近/常用搜索</span>
 		</div>
+		<table class="table table-striped">
+		@foreach( $last_search_list as $_k => $_search_item )
+			<tr>
+				<td>
+					<?php 
+					if( $_search_item['time'] < 60 ) {
+						echo $_search_item['time'].'分钟前';
+					} elseif( $_search_item['time'] ) {
+						echo floor($_search_item['time']/60) . '小时' . ($_search_item['time'] - 60*floor($_search_item['time']/60)) . '分钟前';
+					}
+					?>
+				</td>
+				@if( $_k % 2 == 0 )
+				<td class="text-right">
+					<a href='<?php echo url("brand/{$_search_item['brand']}/{$_search_item['city']}")?>'>{{$_search_item['brand'] . $_search_item['city'] . $_search_item['keyword']}}</a>
+				</td>
+				@else
+				<td class="text-right">
+					<a href='<?php echo url("brand/{$_search_item['brand']}/{$_search_item['city']}")?>'>{{$_search_item['city'] . $_search_item['brand'] . $_search_item['keyword']}}</a>
+				</td>
+				@endif
+			</tr>
+		@endforeach
+		</table>
 	</div>
 </div>
 <div class="row mt30">

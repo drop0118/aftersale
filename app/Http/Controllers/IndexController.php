@@ -37,8 +37,30 @@ class IndexController extends Controller
 			}
 		}
 
+		# 静态内容
+		$city_config = ['北京','上海','广州','深圳','南京','武汉','沈阳','西安','成都','重庆','杭州','青岛','大连','宁波','济南','哈尔滨','长春','厦门','郑州','长沙','福州','乌鲁木齐','昆明','兰州','苏州','无锡','南昌','贵阳','南宁','合肥','太原','石家庄','呼和浩特','佛山','东莞','唐山','烟台','泉州','包头'];
+		shuffle( $city_config );
+		$brand_config = ['小米','vivo','华为','苹果','OPPO','魅族','长城','三星','诺基亚','联想','索尼','海尔','卡西欧','中兴','美的','佳能','步步高','飞利浦','格力','TCL','金立','摩托罗拉','LG','奥克斯','先锋','奔腾','海信','苏泊尔','松下','春兰','四季沐歌','东芝','爱普生','日立','神舟','方太','九阳','清华同方','康佳'];
+		shuffle( $brand_config );
+		$keyword_config = ['售后服务','售后维续','售后服务电话','售后维修电话','官方客服电话','客服热线','售后服务热线','官方维修点','售后维修点','售后维修服务电话','售后服务点','售后服务门店地址','售后保修地址','售后服务联系方式','维修点地址','保修门店地址','授权维修服务网店','授权维修网点','授权售后服务中心','维修服务中心','售后服务网点','客服服务电话'];
+
+		if( !$last_search_list = Cache::get('index-search-list') ){
+			$last_search_list = [];
+			foreach ($city_config as $k => $_city) {
+				$rand_keyword_config = array_rand($keyword_config);
+				$last_search_list[]  = [
+					'time' 	  => rand(pow($k + 1, 2), pow($k + 2, 2)),
+					'city' 	  => $_city,
+					'brand'   => $brand_config[ $k ],
+					'keyword' => $keyword_config[ $rand_keyword_config ] 
+				];
+			}
+			Cache::forever('index-search-list', $last_search_list);
+		}
+
 		return view('index.index', [
-			'brand_list' => $brand_list
+			'brand_list' 	   => $brand_list,
+			'last_search_list' => $last_search_list
 		]);
 	}
 
