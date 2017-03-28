@@ -11,21 +11,21 @@
     </div>
 </div>
 <div class="row">
-	<table width="100%">
-	<tr>
-		<td><a href="/brand/苹果">苹果/Apple官方售后</a></td>
-		<td><a href="/brand/华为">华为/Huawei官方售后</a></td>
-		<td><a href="/brand/小米">小米/Xiaomi官方售后</a></td>
-		<td><a href="/brand/三星">三星/Sumsung官方售后</a></td>
-		<td><a href="/brand/魅族">魅族/Meizu官方售后</a></td>
-	</tr>
-	<tr>
-		<td><a href="/brand/乐视">乐视官方售后</a></td>
-		<td><a href="/brand/金立">金立官方售后</a></td>
-		<td><a href="/brand/努比亚">努比亚官方售后</a></td>
-		<td><a href="/brand/vivo">vivo官方售后</a></td>
-		<td><a href="/brand/OPPO">OPPO官方售后</a></td>
-	</tr>
+	<table class="col-xs-12">
+		<tr>
+			<td><a class="btn" href="/brand/苹果">苹果/Apple官方售后</a></td>
+			<td><a class="btn" href="/brand/华为">华为/Huawei官方售后</a></td>
+			<td><a class="btn" href="/brand/小米">小米/Xiaomi官方售后</a></td>
+			<td><a class="btn" href="/brand/三星">三星/Sumsung官方售后</a></td>
+			<td><a class="btn" href="/brand/魅族">魅族/Meizu官方售后</a></td>
+		</tr>
+		<tr>
+			<td><a class="btn" href="/brand/乐视">乐视官方售后</a></td>
+			<td><a class="btn" href="/brand/金立">金立官方售后</a></td>
+			<td><a class="btn" href="/brand/努比亚">努比亚官方售后</a></td>
+			<td><a class="btn" href="/brand/vivo">vivo官方售后</a></td>
+			<td><a class="btn" href="/brand/OPPO">OPPO官方售后</a></td>
+		</tr>
 	</table>
 </div>
 
@@ -33,10 +33,10 @@
     <div class="col-xs-12">
 		<form class="" action="<?php echo url('brand-search');?>">
 			<div class="form-group form-group-lg">
-				<div class=" col-xs-10" style="padding-left: 0px;">
+				<div class=" col-xs-9" style="padding-left: 0px;">
 					<input type="text" name="keyword" class="form-control" placeholder="输入您想搜索的品牌名称">
 				</div>
-				<button class="btn btn-success col-xs-2 btn-lg">
+				<button class="btn btn-success col-xs-3 btn-lg">
 					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 					查询官方售后服务信息
 				</button>
