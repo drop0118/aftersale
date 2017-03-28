@@ -11,22 +11,22 @@
     </div>
 </div>
 <div class="row">
-<table width="100%">
-<tr>
-<td><a href="/brand/苹果">苹果/Apple官方售后</a></td>
-<td></td>><a href="/brand/华为">华为/Huawei官方售后</a></td>
-<td><a href="/brand/小米">小米/Xiaomi官方售后</a></td>
-<td><a href="/brand/三星">三星/Sumsung官方售后</a></td>
-<td><a href="/brand/魅族">魅族/Meizu官方售后</a></td>
-</tr>
-<tr>
-<td><a href="/brand/乐视">乐视官方售后</a></td>
-<td><a href="/brand/金立">金立官方售后</a></td>
-<td><a href="/brand/努比亚">努比亚官方售后</a></td>
-<td><a href="/brand/vivo">vivo官方售后</a></td>
-<td><a href="/brand/OPPO">OPPO官方售后</a></td>
-</tr>
-</table>
+	<table width="100%">
+	<tr>
+		<td><a href="/brand/苹果">苹果/Apple官方售后</a></td>
+		<td><a href="/brand/华为">华为/Huawei官方售后</a></td>
+		<td><a href="/brand/小米">小米/Xiaomi官方售后</a></td>
+		<td><a href="/brand/三星">三星/Sumsung官方售后</a></td>
+		<td><a href="/brand/魅族">魅族/Meizu官方售后</a></td>
+	</tr>
+	<tr>
+		<td><a href="/brand/乐视">乐视官方售后</a></td>
+		<td><a href="/brand/金立">金立官方售后</a></td>
+		<td><a href="/brand/努比亚">努比亚官方售后</a></td>
+		<td><a href="/brand/vivo">vivo官方售后</a></td>
+		<td><a href="/brand/OPPO">OPPO官方售后</a></td>
+	</tr>
+	</table>
 </div>
 
 <div class="row">
