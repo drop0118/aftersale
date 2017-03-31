@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', $brand->name.'官方'.$current_city.'售后服务热线、维修网点 - ')
+@section('title', $brand->name.$current_city.'官方售后服务热线、维修网点 - ')
 @section('keyword', $brand->name.'官方售后服务,官方授权维修,售后,客服热线,维修电话,维修网点地址,门店,保修,全国联保')
 @section('description', $brand->name.'官方售后服务信息：官方网站、客服热线、维修网点电话和地址信息等。数据真实、安全、可靠，供消费者免费参考。我们支持保护消费者权益，避免消费者在售后服务过程中遇见李鬼。')
 @section('content')
@@ -8,6 +8,14 @@
 	<h1 class="col-xs-12">{{$brand->name}}官方售后维修服务</h1>
 </div>
 <div class="row mt20">
+	<div class="col-md-12">
+		<ol class="breadcrumb">
+			<li><a href="{{url('/')}}">首页</a></li>
+			<li class="active">{{$brand->name.$current_city}}</li>
+		</ol>
+	</div>
+</div>
+<div class="row">
 	<div class="col-xs-12">
 		<div class="common-title">
 			<span>品牌简介</span>

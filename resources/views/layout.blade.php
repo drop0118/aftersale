@@ -15,7 +15,7 @@
             @yield('content')
             <footer class="row">
                 <div class="col-xs-12">
-                    沪ICP备17010071号
+                    <a target="_blank" href="http://www.miitbeian.gov.cn/">沪ICP备17010071号</a>
                 </div>
             </footer>
         </div>
