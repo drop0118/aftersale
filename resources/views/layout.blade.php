@@ -22,10 +22,19 @@
         <script>
         var _hmt = _hmt || [];
         (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?72962872148add9fd8443c768c0fd594";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?72962872148add9fd8443c768c0fd594";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?54e7b184b0ea3a44f4da1d9251802410";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
         })();
         </script>
 
