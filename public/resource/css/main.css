@@ -22,8 +22,9 @@ footer{
 .black-level4{color: #ddd;}
 
 .index-header{
-	height: 150px;
-	margin-top: 50px;
+	height: 80px;
+	line-height: 80px;
+	font-size: 16px;
 }
 .common-title{
 	height: 40px;
@@ -76,4 +77,17 @@ footer{
 	font-weight: bold;
 	color: #333;
 }
+.hot-brand .title{
+	width: 35px;
+	padding: 10px 0px;
+	background: #ddd;
+}
+.hot-brand td{
+	background: #f5f5f5;
+}
 
+.cities_area a{
+	width: 100px;
+	display: inline-block;
+	line-height: 40px;
+}

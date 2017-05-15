@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Cache;
+use Illuminate\Support\Facades\Cookie;
 use App\Brand;
 use App\Store;
 use App\Http\Requests;
@@ -13,8 +14,14 @@ use App\Infrastructure\Helper;
 class IndexController extends Controller
 {
 
-	public function index(Request $request, Helper $helper)
+	public function index(Request $request, Helper $helper, $city = null)
 	{
+		# make city
+		if( ($city && !in_array($city, Store::$city_map)) || !$city ) {
+			$area_info = $helper->getIpInfo($request->getClientIp());
+			$city = $area_info ? $area_info['city'] : Store::$city_map[0];
+		} 
+		setcookie('city', $city, 0, '/', $request->header('host'));
 		# 获取品牌表
 		if( !$brands = Cache::get('index-brands') ){
 			$brands = Brand::orderByRaw('RAND()')->take(300)->get();
@@ -59,6 +66,7 @@ class IndexController extends Controller
 		}
 
 		return view('index.index', [
+			'city' => $city,
 			'brand_list' 	   => $brand_list,
 			'last_search_list' => $last_search_list
 		]);
@@ -67,40 +75,49 @@ class IndexController extends Controller
 	public function brandSearch(Request $request)
 	{
 		$id = $request->get('keyword');
-
+		$city = $_COOKIE['city'];
 		$brand = Brand::where('name', $id)->first();
 		if(!$brand) {
 			return redirect('/');
 		} else {
-			return redirect('brand/'.$brand->name);
+			return redirect('/'.$brand->name.'/'.$city);
 		}
 	}
 
-	public function brand(Request $request, Helper $helper, $name, $city = false, $page = 1)
+	public function brand(Request $request, Helper $helper, $name, $city, $page = 1)
 	{
 		$brand = Brand::where('name', $name)->first();
 		if(!$brand) {
 			return redirect('/');
 		}
 		$query = $brand->stores();
-		$area_info = $helper->getIpInfo($request->getClientIp());
-		$current_city = $area_info ? $area_info['city'] : Store::$city_map[0];
-		if( $city ) {
-			$current_city = $city;
+		if( !$city ) {
+			$area_info = $helper->getIpInfo($request->getClientIp());
+			$city = $area_info ? $area_info['city'] : Store::$city_map[0];
 		}
-		$query = $query->where('address', 'like', '%'.$current_city.'市%');
-		$limit = 10;
+		if( !in_array($city, Store::$city_map) ) {
+			return redirect('/');
+		}
+		$query = $query->where('address', 'like', '%'.$city.'市%');
+		$limit = 30;
 		$offset = max($page - 1, 0) * $limit;
-		$stores = $query->paginate(10);
+		$stores = $query->paginate(30);
 
 		return view('index.brand', [
 			'brand' 	   => $brand,
 			'stores'	   => $stores,
 			'city_map' 	   => Store::$city_map,
-			'current_city' => $current_city
+			'current_city' => $city
 		]);
 	}
 
-
+	public function cities(Request $request, Helper $helper)
+	{
+		$area_info = $helper->getIpInfo($request->getClientIp());
+		$current_city = $area_info ? $area_info['city'] : Store::$city_map[0];
+		return view('index.cities', [
+			'current_city' => $current_city
+		]);
+	}
 
 }

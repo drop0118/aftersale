@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-        <title>@yield('title') e售后</title>
+        <title>@yield('title') 售后网</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="keywords" content="@yield('keyword')" />
         <meta name="description" content="@yield('description')" />
