@@ -7,11 +7,11 @@
 <div class="col-sm-12 col-md-9">
 	<div class="row">
 		<div class="index-header">
-			<div class="col-xs-6">
+			<div class="col-xs-11 col-sm-6">
 				<h1 class="pull-left" style="margin-right: 20px;">售后网</h1>
 				{{$city}} <a href="{{url('/cities')}}" style="font-size: 14px;">[切换城市]</a>
 			</div>
-	        <div class="col-xs-6 text-right">
+	        <div class="col-xs-1 col-sm-6 text-right hidden-xs">
 	        	品牌产品官方售后服务信息查询
 	        </div>
 	    </div>
@@ -37,7 +37,7 @@
 		<div class="col-xs-12">
 			<table class="col-xs-12 hot-brand">
 				<tr>
-					<td rowspan=2 class="text-center title">热<br />门<br />品<br />牌</td>
+					<td rowspan=2 class="text-center title hidden-xs">热<br />门<br />品<br />牌</td>
 					<td class="text-center"><a class="btn btn-link" href="{{url('苹果/'.$city)}}" title="苹果/Apple官方售后">苹果</a></td>
 					<td class="text-center"><a class="btn btn-link" href="{{url('华为/'.$city)}}" title="华为/Huawei官方售后">华为</a></td>
 					<td class="text-center"><a class="btn btn-link" href="{{url('小米/'.$city)}}" title="小米/Xiaomi官方售后">小米</a></td>
@@ -57,7 +57,7 @@
 		</div>
 	</div>
 
-	<div class="row mt20">
+	<div class="row mt20 hidden-xs">
 		<div class="col-xs-12">
 			<div class="common-title">
 				<span>所有品牌</span>

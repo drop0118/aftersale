@@ -4,8 +4,6 @@ header{
 footer{
 	height: 100px;
 	bottom: 0px;
-	width: 100%;
-	margin-top: 20px;
 	line-height: 100px;
 	text-align: center;
 	font-size: 12px;
@@ -13,7 +11,7 @@ footer{
 }
 
 .container{
-	width: 1020px;
+	/*width: 1020px;*/
 }
 
 .black-level1{color: #333;}

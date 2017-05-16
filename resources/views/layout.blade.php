@@ -12,8 +12,10 @@
     <body>
         <div class="container">
             <header class="row"></header>
+            <div class="row">
             @yield('content')
-            <footer class="row">
+            </div>
+            <footer class="row hidden-xs">
                 <div class="col-xs-12">
                     <a target="_blank" href="http://www.miitbeian.gov.cn/">沪ICP备17010071号</a>
                 </div>
