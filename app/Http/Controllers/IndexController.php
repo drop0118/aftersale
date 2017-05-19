@@ -111,6 +111,11 @@ class IndexController extends Controller
 		]);
 	}
 
+	public function redirect(Request $request, Helper $helper, $name, $city)
+	{
+		return redirect('/'.$name.'/'.$city);
+	}
+
 	public function cities(Request $request, Helper $helper)
 	{
 		$area_info = $helper->getIpInfo($request->getClientIp());

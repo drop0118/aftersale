@@ -7,13 +7,13 @@
 <div class="col-sm-12 col-md-9">
 	<div class="row">
 		<div class="col-xs-12">
-			<h1>{{$brand->name}} <a href="{{url('/'.$current_city)}}" >{{$current_city}}</a> 官方售后服务信息查询</h1>
+			<h3>{{$brand->name}} <a href="{{url('/'.$current_city)}}" >{{$current_city}}</a> 官方售后服务信息查询</h3>
 	    </div>
 	</div>
 	<div class="row mt20">
 		<div class="col-md-12">
 			<ol class="breadcrumb">
-				<li><a href="{{url('/')}}">首页</a></li>
+				<li><a href="{{url('/'.$current_city)}}">首页</a></li>
 				<li class="active">{{$brand->name.$current_city}}</li>
 			</ol>
 		</div>
@@ -100,6 +100,7 @@
 </div>
 <div class="col-md-3 hidden-xs hidden-sm mt20">
 	<!-- taobao ad. -->
+	<a data-type="2" biz-keyword="{{$current_city}}" data-tmpl="220x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#">{{$current_city}}</a>
 	<a data-type="2" biz-keyword="{{$brand->name}}" data-tmpl="220x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#">{{$brand->name}}</a>
 </div>
 <script type="text/javascript">
@@ -112,7 +113,7 @@
             h.insertBefore(s, h.firstChild);
         };
         var o = {
-            pid: "mm_11563586_22442205_74604442",/*推广单元ID，用于区分不同的推广渠道*/
+            pid: "mm_11563586_25266816_96526329",/*推广单元ID，用于区分不同的推广渠道*/
             appkey: "",/*通过TOP平台申请的appkey，设置后引导成交会关联appkey*/
             unid: "",/*自定义统计字段*/
             type: "click" /* click 组件的入口标志 （使用click组件必设）*/
@@ -121,7 +122,5 @@
         win.alimamatk_onload.push(o);
     })(window,document);
 </script>
-
-
 
 @endsection

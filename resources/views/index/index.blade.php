@@ -6,18 +6,6 @@
 
 <div class="col-sm-12 col-md-9">
 	<div class="row">
-		<div class="index-header">
-			<div class="col-xs-11 col-sm-6">
-				<h1 class="pull-left" style="margin-right: 20px;">售后网</h1>
-				{{$city}} <a href="{{url('/cities')}}" style="font-size: 14px;">[切换城市]</a>
-			</div>
-	        <div class="col-xs-1 col-sm-6 text-right hidden-xs">
-	        	品牌产品官方售后服务信息查询
-	        </div>
-	    </div>
-	</div>
-
-	<div class="row">
 	    <div class="col-xs-12">
 			<form class="" action="<?php echo url('brand-search');?>">
 				<div class="input-group">

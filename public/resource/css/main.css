@@ -1,10 +1,12 @@
 header{
 	font-family: "SF Pro SC","HanHei SC","SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+	background: #0f88eb;
+	color: white;
+	margin-bottom: 20px;
 }
 footer{
-	height: 100px;
-	bottom: 0px;
-	line-height: 100px;
+	height: 40px;
+	line-height: 40px;
 	text-align: center;
 	font-size: 12px;
 	color: #999;
@@ -20,8 +22,8 @@ footer{
 .black-level4{color: #ddd;}
 
 .index-header{
-	height: 80px;
-	line-height: 80px;
+	height: 60px;
+	line-height: 60px;
 	font-size: 16px;
 }
 .common-title{
@@ -88,4 +90,10 @@ footer{
 	width: 100px;
 	display: inline-block;
 	line-height: 40px;
+	text-align: center;
+}
+@media (max-width: 767px) {
+	.container-fluid{
+		padding: 0px;
+	}
 }

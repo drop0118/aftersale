@@ -7,13 +7,6 @@
 use App\Store;
 ?>
 
-<div class="row">
-	<div class="col-xs-12">
-		<div class="index-header">
-			<h1 class="pull-left" style="margin-right: 20px;">售后网</h1>
-			城市列表
-	    </div>
-	</div>
 	<div class=" col-xs-12">
 		<div class="alert alert-info" role="alert">
 			猜您当前在 <a href="{{url('/'.$current_city)}}"><b>{{$current_city}}市</b></a>
@@ -24,6 +17,5 @@ use App\Store;
 			<a href="{{url('/'.$_city)}}">{{$_city}}</a>
 		@endforeach
 	</div>
-</div>
 
 @endsection
