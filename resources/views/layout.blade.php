@@ -19,6 +19,9 @@
                             <div class="row">
                                 <div class="col-xs-11 col-sm-6">
                                     <h2 class="pull-left" style="margin-right: 20px;margin-top: 14px;"><a href="{{isset($city) ? url('/'.$city) : url('/')}}" style="color: white;">售后网</a></h2>
+                                    
+                                    @yield('extra_title')
+
                                     @if (isset($city))
                                     {{$city}} <a href="{{url('/cities')}}" style="font-size: 14px;color: rgba(255,255,255, 0.6);">[切换城市]</a>
                                     @endif
@@ -36,6 +39,12 @@
             
             <div class="row">
             @yield('content')
+            </div>
+            <div class="row">
+                <div class="col-xs-12 bottom-link">
+                    <a href="{{url('brands')}}">品牌大全</a>
+                    <a href="{{url('/cities')}}">城市大全</a>
+                </div>
             </div>
             <footer class="row">
                 <div class="col-md-9 col-xs-12 col-sm-12 col-lg-9">

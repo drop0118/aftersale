@@ -54,15 +54,15 @@
 		<div class="col-xs-12">
 			<div class="number_content">
 				<div class="row">
-					<div class="number_index col-xs-2">
-						<a href="javascript:void(0);" data='1' class="show_brands hover">A - D</a>
-						<a href="javascript:void(0);" data='2' class="show_brands">E - H</a>
-						<a href="javascript:void(0);" data='3' class="show_brands">I - L</a>
-						<a href="javascript:void(0);" data='4' class="show_brands">M - P</a>
-						<a href="javascript:void(0);" data='5' class="show_brands">Q - T</a>
-						<a href="javascript:void(0);" data='6' class="show_brands">U - Z</a>
+					<div class="number_index col-xs-12">
+						<a href="javascript:void(0);" data='1' class="show_brands col-xs-2 hover">A - D</a>
+						<a href="javascript:void(0);" data='2' class="show_brands col-xs-2">E - H</a>
+						<a href="javascript:void(0);" data='3' class="show_brands col-xs-2">I - L</a>
+						<a href="javascript:void(0);" data='4' class="show_brands col-xs-2">M - P</a>
+						<a href="javascript:void(0);" data='5' class="show_brands col-xs-2">Q - T</a>
+						<a href="javascript:void(0);" data='6' class="show_brands col-xs-2">U - Z</a>
 					</div>
-					<div class="brand_content col-xs-10">
+					<div class="brand_content col-xs-12">
 						<div class="content_1">
 						@foreach ($brand_list[1] as $_brand)
 							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2">{{$_brand->name}}</a>

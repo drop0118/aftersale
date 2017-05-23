@@ -16,31 +16,40 @@ class IndexController extends Controller
 
 	public function index(Request $request, Helper $helper, $city = null)
 	{
+		if( $city && !in_array($city, Store::$city_map) ) {
+			# display brand cities page
+			$brand = Brand::where('name', $city)->first();
+			if(!$brand)
+				return redirect('/');
+			return view('index.brand_city', [
+				'brand' => $brand
+			]);
+		}
 		# make city
-		if( ($city && !in_array($city, Store::$city_map)) || !$city ) {
+		if( !$city ) {
 			$area_info = $helper->getIpInfo($request->getClientIp());
 			$city = $area_info ? $area_info['city'] : Store::$city_map[0];
 		} 
 		setcookie('city', $city, 0, '/', $request->header('host'));
 		# 获取品牌表
 		if( !$brands = Cache::get('index-brands') ){
-			$brands = Brand::orderByRaw('RAND()')->take(300)->get();
-			Cache::put('index-brands', $brands, 60);
+			$brands = Brand::get();
+			Cache::put('index-brands', $brands, 86400);
 		}
 		$brand_list = [];
 		foreach ($brands as $_brand) {
 			if(in_array($helper->getFirstCharter($_brand->name), ['A','B','C','D'])) {
-				count(@$brand_list[1]) < 36 && ($brand_list[1][] = $_brand);
+				(@$brand_list[1][] = $_brand);
 			} elseif(in_array($helper->getFirstCharter($_brand->name), ['E','F','G','H'])) {
-				count(@$brand_list[2]) < 36 && ($brand_list[2][] = $_brand);
+				(@$brand_list[2][] = $_brand);
 			} elseif(in_array($helper->getFirstCharter($_brand->name), ['I','J','K','L'])) {
-				count(@$brand_list[3]) < 36 && ($brand_list[3][] = $_brand);
+				(@$brand_list[3][] = $_brand);
 			} elseif(in_array($helper->getFirstCharter($_brand->name), ['M','N','O','P'])) {
-				count(@$brand_list[4]) < 36 && ($brand_list[4][] = $_brand);
+				(@$brand_list[4][] = $_brand);
 			} elseif(in_array($helper->getFirstCharter($_brand->name), ['Q','R','S','T'])) {
-				count(@$brand_list[5]) < 36 && ($brand_list[5][] = $_brand);
+				(@$brand_list[5][] = $_brand);
 			} elseif(in_array($helper->getFirstCharter($_brand->name), ['U','V','W','X','Y','Z'])) {
-				count(@$brand_list[6]) < 36 && ($brand_list[6][] = $_brand);
+				(@$brand_list[6][] = $_brand);
 			}
 		}
 
@@ -122,6 +131,18 @@ class IndexController extends Controller
 		$current_city = $area_info ? $area_info['city'] : Store::$city_map[0];
 		return view('index.cities', [
 			'current_city' => $current_city
+		]);
+	}
+
+	public function brands(Helper $helper)
+	{
+		$brands = Brand::select('name')->get();
+		$new_brands = [];
+		foreach ($brands as $_brand) {
+			@$new_brands[ $helper->getFirstCharter($_brand->name) ][] = $_brand->name;
+		}
+		return view('index.brands', [
+			'brands' => $new_brands
 		]);
 	}
 
