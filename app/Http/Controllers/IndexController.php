@@ -146,4 +146,15 @@ class IndexController extends Controller
 		]);
 	}
 
+	public function store(Helper $helper, $name, $city, $store_id)
+	{
+		$store = Store::where('id', $store_id)->first();
+		$brand = Brand::where('name', $name)->first();
+		return view('index.store', [
+			'store' => $store,
+			'brand' => $brand,
+			'current_city' => $city
+		]);
+	}
+
 }

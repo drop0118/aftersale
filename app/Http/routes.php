@@ -14,6 +14,7 @@
 Route::get('/brand-search', ['uses' => 'IndexController@brandSearch']);
 Route::get('/cities', ['uses' => 'IndexController@cities']);
 Route::get('/brands', ['uses' => 'IndexController@brands']);
+Route::get('/{name}/{city}/{store_id}', ['uses' => 'IndexController@store']);
 Route::get('/{city?}', ['uses' => 'IndexController@index']);
 Route::get('/{name}/{city}', ['uses' => 'IndexController@brand']);
 Route::get('/brand/{name}/{city?}', ['uses' => 'IndexController@redirect']);

@@ -17,16 +17,15 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-9">
                             <div class="row">
-                                <div class="col-xs-11 col-sm-6">
+                                <div class="col-xs-11 col-sm-7" style="white-space: nowrap;">
                                     <h2 class="pull-left" style="margin-right: 20px;margin-top: 14px;"><a href="{{isset($city) ? url('/'.$city) : url('/')}}" style="color: white;">售后网</a></h2>
-                                    
                                     @yield('extra_title')
 
                                     @if (isset($city))
                                     {{$city}} <a href="{{url('/cities')}}" style="font-size: 14px;color: rgba(255,255,255, 0.6);">[切换城市]</a>
                                     @endif
                                 </div>
-                                <div class="col-xs-1 col-sm-6 text-right hidden-xs">
+                                <div class="col-xs-1 col-sm-5 text-right hidden-xs">
                                     品牌产品官方售后服务信息查询
                                 </div>
                             </div>

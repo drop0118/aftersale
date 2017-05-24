@@ -7,13 +7,14 @@
 <div class="col-sm-12 col-md-9">
 	<div class="row">
 		<div class="col-xs-12">
-			<h3>{{$brand->name}} <a href="{{url('/'.$current_city)}}" >{{$current_city}}</a> 官方售后服务信息查询</h3>
+			<h3><a href="{{url($brand->name)}}" >{{$brand->name}}</a> {{$current_city}} 官方售后服务信息查询</h3>
 	    </div>
 	</div>
 	<div class="row mt20">
 		<div class="col-md-12">
 			<ol class="breadcrumb">
 				<li><a href="{{url('/'.$current_city)}}">首页</a></li>
+				<li><a href="{{url($brand->name)}}">{{$brand->name}}</a></li>
 				<li class="active">{{$brand->name.$current_city}}</li>
 			</ol>
 		</div>
@@ -71,8 +72,10 @@
 							@foreach ($stores as $store)
 							<tr>
 								<td style="line-height: 30px;">
-									{{$store->address}}<br />
-									<span class="black-level3">{{$store->name}}</span>
+									<a href="{{url($brand->name.'/'.$current_city.'/'.$store->id)}}">
+										{{$store->address}}<br />
+										<span class="black-level3">{{$store->name}}</span>
+									</a>
 								</td>
 								<td>
 									-

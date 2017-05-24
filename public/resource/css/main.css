@@ -126,3 +126,7 @@ footer{
 .media_block ._content a{
 	padding: 10px 0px;
 }
+#BDmap{
+	width: 100%;
+	height: 400px;
+}
