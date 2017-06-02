@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-        <title>@yield('title') 售后网</title>
+        <title>@yield('title') 官方售后信息</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="keywords" content="@yield('keyword')" />
         <meta name="description" content="@yield('description')" />
@@ -18,7 +18,7 @@
                         <div class="col-xs-12 col-sm-9">
                             <div class="row">
                                 <div class="col-xs-11 col-sm-7" style="white-space: nowrap;">
-                                    <h2 class="pull-left" style="margin-right: 20px;margin-top: 14px;"><a href="{{isset($city) ? url('/'.$city) : url('/')}}" style="color: white;">售后网</a></h2>
+                                    <h2 class="pull-left" style="margin-right: 20px;margin-top: 14px;"><a href="{{isset($city) ? url('/'.$city) : url('/')}}" style="color: white;">官方售后信息</a></h2>
                                     @yield('extra_title')
 
                                     @if (isset($city))
