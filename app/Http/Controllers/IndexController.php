@@ -38,18 +38,22 @@ class IndexController extends Controller
 		}
 		$brand_list = [];
 		foreach ($brands as $_brand) {
-			if(in_array($helper->getFirstCharter($_brand->name), ['A','B','C','D'])) {
+			if(in_array($helper->getFirstCharter($_brand->name), ['A','B','C'])) {
 				(@$brand_list[1][] = $_brand);
-			} elseif(in_array($helper->getFirstCharter($_brand->name), ['E','F','G','H'])) {
+			} elseif(in_array($helper->getFirstCharter($_brand->name), ['D','E','F'])) {
 				(@$brand_list[2][] = $_brand);
-			} elseif(in_array($helper->getFirstCharter($_brand->name), ['I','J','K','L'])) {
+			} elseif(in_array($helper->getFirstCharter($_brand->name), ['G','H','I'])) {
 				(@$brand_list[3][] = $_brand);
-			} elseif(in_array($helper->getFirstCharter($_brand->name), ['M','N','O','P'])) {
+			} elseif(in_array($helper->getFirstCharter($_brand->name), ['J','K','L'])) {
 				(@$brand_list[4][] = $_brand);
-			} elseif(in_array($helper->getFirstCharter($_brand->name), ['Q','R','S','T'])) {
+			} elseif(in_array($helper->getFirstCharter($_brand->name), ['M','N','O','P'])) {
 				(@$brand_list[5][] = $_brand);
-			} elseif(in_array($helper->getFirstCharter($_brand->name), ['U','V','W','X','Y','Z'])) {
+			} elseif(in_array($helper->getFirstCharter($_brand->name), ['Q','R','S','T'])) {
 				(@$brand_list[6][] = $_brand);
+			} elseif(in_array($helper->getFirstCharter($_brand->name), ['U','V','W'])) {
+				(@$brand_list[7][] = $_brand);
+			} elseif(in_array($helper->getFirstCharter($_brand->name), ['X','Y','Z'])) {
+				(@$brand_list[8][] = $_brand);
 			}
 		}
 
