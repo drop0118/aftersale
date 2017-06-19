@@ -26,20 +26,20 @@
 			<table class="col-xs-12 hot-brand">
 				<tr>
 					<td rowspan=2 class="text-center title hidden-xs">热<br />门<br />品<br />牌</td>
-					<td class="text-center"><a class="btn btn-link" href="{{url('苹果/'.$city)}}" title="苹果/Apple官方售后">苹果</a></td>
-					<td class="text-center"><a class="btn btn-link" href="{{url('华为/'.$city)}}" title="华为/Huawei官方售后">华为</a></td>
-					<td class="text-center"><a class="btn btn-link" href="{{url('小米/'.$city)}}" title="小米/Xiaomi官方售后">小米</a></td>
-					<td class="text-center"><a class="btn btn-link" href="{{url('三星/'.$city)}}" title="三星/Sumsung官方售后">三星</a></td>
-					<td class="text-center"><a class="btn btn-link" href="{{url('魅族/'.$city)}}" title="魅族/Meizu官方售后">魅族</a></td>
-					<td class="text-center"><a class="btn btn-link" href="{{url('联想/'.$city)}}" title="联想/Lenovo官方售后">联想</a></td>
+					<td class="text-center t1"><a class="btn btn-link " href="{{url('苹果/'.$city)}}" title="苹果/Apple官方售后"><s></s><p>苹果</p></a></td>
+					<td class="text-center t2"><a class="btn btn-link" href="{{url('华为/'.$city)}}" title="华为/Huawei官方售后"><s></s><p>华为</p></a></td>
+					<td class="text-center t3"><a class="btn btn-link" href="{{url('小米/'.$city)}}" title="小米/Xiaomi官方售后"><s></s><p>小米</p></a></td>
+					<td class="text-center t4"><a class="btn btn-link" href="{{url('三星/'.$city)}}" title="三星/Sumsung官方售后"><s></s><p>三星</p></a></td>
+					<td class="text-center t5"><a class="btn btn-link" href="{{url('魅族/'.$city)}}" title="魅族/Meizu官方售后"><s></s><p>魅族</p></a></td>
+					<td class="text-center t6"><a class="btn btn-link" href="{{url('联想/'.$city)}}" title="联想/Lenovo官方售后"><s></s><p>联想</p></a></td>
 				</tr>
 				<tr>
-					<td class="text-center"><a class="btn btn-link" href="{{url('乐视/'.$city)}}" title="乐视官方售后">乐视</a></td>
-					<td class="text-center"><a class="btn btn-link" href="{{url('金立/'.$city)}}" title="金立官方售后">金立</a></td>
-					<td class="text-center"><a class="btn btn-link" href="{{url('vivo/'.$city)}}" title="vivo官方售后">vivo</a></td>
-					<td class="text-center"><a class="btn btn-link" href="{{url('OPPO/'.$city)}}" title="OPPO官方售后">OPPO</a></td>
-					<td class="text-center"><a class="btn btn-link" href="{{url('美图/'.$city)}}" title="美图官方售后">美图</a></td>
-					<td class="text-center"><a class="btn btn-link" href="{{url('LG/'.$city)}}" title="LG官方售后">LG</a></td>
+					<td class="text-center t7"><a class="btn btn-link" href="{{url('乐视/'.$city)}}" title="乐视官方售后"><s></s><p>乐视</p></a></td>
+					<td class="text-center t8"><a class="btn btn-link" href="{{url('金立/'.$city)}}" title="金立官方售后"><s></s><p>金立</p></a></td>
+					<td class="text-center t9"><a class="btn btn-link" href="{{url('vivo/'.$city)}}" title="vivo官方售后"><s></s><p>vivo</p></a></td>
+					<td class="text-center t10"><a class="btn btn-link" href="{{url('OPPO/'.$city)}}" title="OPPO官方售后"><s></s><p>OPPO</p></a></td>
+					<td class="text-center t11"><a class="btn btn-link" href="{{url('美图/'.$city)}}" title="美图官方售后"><s></s><p>美图</p></a></td>
+					<td class="text-center t12"><a class="btn btn-link" href="{{url('LG/'.$city)}}" title="LG官方售后"><s></s><p>LG</p></a></td>
 				</tr>
 			</table>
 		</div>
@@ -55,42 +55,54 @@
 			<div class="number_content">
 				<div class="row">
 					<div class="number_index col-xs-12">
-						<a href="javascript:void(0);" data='1' class="show_brands col-xs-2 hover">A - D</a>
-						<a href="javascript:void(0);" data='2' class="show_brands col-xs-2">E - H</a>
-						<a href="javascript:void(0);" data='3' class="show_brands col-xs-2">I - L</a>
-						<a href="javascript:void(0);" data='4' class="show_brands col-xs-2">M - P</a>
-						<a href="javascript:void(0);" data='5' class="show_brands col-xs-2">Q - T</a>
-						<a href="javascript:void(0);" data='6' class="show_brands col-xs-2">U - Z</a>
+						<a href="javascript:void(0);" data='1' class="show_brands col-xs-2 hover">A - C</a>
+						<a href="javascript:void(0);" data='2' class="show_brands col-xs-2">D - F</a>
+						<a href="javascript:void(0);" data='3' class="show_brands col-xs-2">G - I</a>
+						<a href="javascript:void(0);" data='4' class="show_brands col-xs-2">J - L</a>
+						<a href="javascript:void(0);" data='5' class="show_brands col-xs-2">M - P</a>
+						<a href="javascript:void(0);" data='6' class="show_brands col-xs-2">Q - T</a>
+						<a href="javascript:void(0);" data='7' class="show_brands col-xs-2">U - W</a>
+						<a href="javascript:void(0);" data='8' class="show_brands col-xs-2">X - Z</a>
 					</div>
 					<div class="brand_content col-xs-12">
 						<div class="content_1">
 						@foreach ($brand_list[1] as $_brand)
-							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2">{{$_brand->name}}</a>
+							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2" title="{{$_brand->name}}">{{$_brand->name}}</a>
 						@endforeach
 						</div>
 						<div class="content_2" style="display:none;">
 						@foreach ($brand_list[2] as $_brand)
-							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2">{{$_brand->name}}</a>
+							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2" title="{{$_brand->name}}">{{$_brand->name}}</a>
 						@endforeach
 						</div>
 						<div class="content_3" style="display:none;">
 						@foreach ($brand_list[3] as $_brand)
-							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2">{{$_brand->name}}</a>
+							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2" title="{{$_brand->name}}">{{$_brand->name}}</a>
 						@endforeach
 						</div>
 						<div class="content_4" style="display:none;">
 						@foreach ($brand_list[4] as $_brand)
-							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2">{{$_brand->name}}</a>
+							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2" title="{{$_brand->name}}">{{$_brand->name}}</a>
 						@endforeach
 						</div>
 						<div class="content_5" style="display:none;">
 						@foreach ($brand_list[5] as $_brand)
-							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2">{{$_brand->name}}</a>
+							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2" title="{{$_brand->name}}">{{$_brand->name}}</a>
 						@endforeach
 						</div>
 						<div class="content_6" style="display:none;">
 						@foreach ($brand_list[6] as $_brand)
-							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2">{{$_brand->name}}</a>
+							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2" title="{{$_brand->name}}">{{$_brand->name}}</a>
+						@endforeach
+						</div>
+						<div class="content_7" style="display:none;">
+						@foreach ($brand_list[7] as $_brand)
+							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2" title="{{$_brand->name}}">{{$_brand->name}}</a>
+						@endforeach
+						</div>
+						<div class="content_8" style="display:none;">
+						@foreach ($brand_list[8] as $_brand)
+							<a href="{{url('/'.$_brand->name.'/'.$city)}}" class="col-xs-2" title="{{$_brand->name}}">{{$_brand->name}}</a>
 						@endforeach
 						</div>
 					</div>
