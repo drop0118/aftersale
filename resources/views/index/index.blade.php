@@ -25,7 +25,6 @@
 		<div class="col-xs-12">
 			<table class="col-xs-12 hot-brand">
 				<tr>
-					<td rowspan=2 class="text-center title hidden-xs">热<br />门<br />品<br />牌</td>
 					<td class="text-center t1"><a class="btn btn-link " href="{{url('苹果/'.$city)}}" title="苹果/Apple官方售后"><s></s><p>苹果</p></a></td>
 					<td class="text-center t2"><a class="btn btn-link" href="{{url('华为/'.$city)}}" title="华为/Huawei官方售后"><s></s><p>华为</p></a></td>
 					<td class="text-center t3"><a class="btn btn-link" href="{{url('小米/'.$city)}}" title="小米/Xiaomi官方售后"><s></s><p>小米</p></a></td>

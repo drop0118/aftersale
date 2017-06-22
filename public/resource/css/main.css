@@ -133,10 +133,10 @@ footer{
     background: url(../img/meizu_cur.png) no-repeat center;
 }
 .t6 s{
-    background: url(../img/more_def.png) no-repeat center;
+    background: url(../img/lenovo_def.png) no-repeat center;
 }
 .t6 a:hover s{
-    background: url(../img/more_cur.png) no-repeat center;
+    background: url(../img/lenovo_cur.png) no-repeat center;
 }
 .t7 s{
     background: url(../img/ls_def.png) no-repeat center;
@@ -163,16 +163,20 @@ footer{
     background: url(../img/oppo_cur.png) no-repeat center;
 }
 .t11 s{
-    background: url(../img/iPhone_def.png) no-repeat center;
+    background: url(../img/meitu_def.png) no-repeat center;
+    background-size: auto 22px;
 }
 .t11 a:hover s{
-    background: url(../img/iPhone_cur.png) no-repeat center;
+    background: url(../img/meitu_cur.png) no-repeat center;
+    background-size: auto 22px;
 }
 .t12 s{
-    background: url(../img/iPhone_def.png) no-repeat center;
+    background: url(../img/lg_def.png) no-repeat center;
+    background-size: auto 30px;
 }
 .t12 a:hover s{
-    background: url(../img/iPhone_cur.png) no-repeat center;
+    background: url(../img/lg_cur.png) no-repeat center;
+    background-size: auto 30px;
 }
 .cities_area a{
 	width: 100px;
