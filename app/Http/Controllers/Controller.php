@@ -19,14 +19,14 @@ class Controller extends BaseController
     public function __construct(Request $request)
     {
         if( !Config::get('app.debug') ) {
-           $request_log = new RequestLog();
-            $request_log->request_ip = $_SERVER['REMOTE_ADDR'];
-            $request_log->request_header = $_SERVER['HTTP_USER_AGENT'];
-            $request_log->request_uri = $request->fullUrl();
-            if($request->get('keyword')) {
-                $request_log->keyword = $request->get('keyword');
-            }
-            $request_log->save(); 
+            // $request_log = new RequestLog();
+            // $request_log->request_ip = $_SERVER['REMOTE_ADDR'];
+            // $request_log->request_header = $_SERVER['HTTP_USER_AGENT'];
+            // $request_log->request_uri = $request->fullUrl();
+            // if($request->get('keyword')) {
+            //     $request_log->keyword = $request->get('keyword');
+            // }
+            // $request_log->save(); 
         }
     }
 
