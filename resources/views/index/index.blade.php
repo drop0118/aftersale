@@ -23,24 +23,20 @@
 
 	<div class="row mt20">
 		<div class="col-xs-12">
-			<table class="col-xs-12 hot-brand">
-				<tr>
-					<td class="text-center t1"><a class="btn btn-link " href="{{url('苹果/'.$city)}}" title="苹果/Apple官方售后"><s></s><p>苹果</p></a></td>
-					<td class="text-center t2"><a class="btn btn-link" href="{{url('华为/'.$city)}}" title="华为/Huawei官方售后"><s></s><p>华为</p></a></td>
-					<td class="text-center t3"><a class="btn btn-link" href="{{url('小米/'.$city)}}" title="小米/Xiaomi官方售后"><s></s><p>小米</p></a></td>
-					<td class="text-center t4"><a class="btn btn-link" href="{{url('三星/'.$city)}}" title="三星/Sumsung官方售后"><s></s><p>三星</p></a></td>
-					<td class="text-center t5"><a class="btn btn-link" href="{{url('魅族/'.$city)}}" title="魅族/Meizu官方售后"><s></s><p>魅族</p></a></td>
-					<td class="text-center t6"><a class="btn btn-link" href="{{url('联想/'.$city)}}" title="联想/Lenovo官方售后"><s></s><p>联想</p></a></td>
-				</tr>
-				<tr>
-					<td class="text-center t7"><a class="btn btn-link" href="{{url('乐视/'.$city)}}" title="乐视官方售后"><s></s><p>乐视</p></a></td>
-					<td class="text-center t8"><a class="btn btn-link" href="{{url('金立/'.$city)}}" title="金立官方售后"><s></s><p>金立</p></a></td>
-					<td class="text-center t9"><a class="btn btn-link" href="{{url('vivo/'.$city)}}" title="vivo官方售后"><s></s><p>vivo</p></a></td>
-					<td class="text-center t10"><a class="btn btn-link" href="{{url('OPPO/'.$city)}}" title="OPPO官方售后"><s></s><p>OPPO</p></a></td>
-					<td class="text-center t11"><a class="btn btn-link" href="{{url('美图/'.$city)}}" title="美图官方售后"><s></s><p>美图</p></a></td>
-					<td class="text-center t12"><a class="btn btn-link" href="{{url('LG/'.$city)}}" title="LG官方售后"><s></s><p>LG</p></a></td>
-				</tr>
-			</table>
+			<div class="hot-brand">
+					<div class="text-center col-md-2 col-sm-3 col-xs-4 t1"><a class=" " href="{{url('苹果/'.$city)}}" title="苹果/Apple官方售后"><s></s><p>苹果</p></a></div>
+					<div class="text-center col-md-2 col-sm-3 col-xs-4 t2"><a class="" href="{{url('华为/'.$city)}}" title="华为/Huawei官方售后"><s></s><p>华为</p></a></div>
+					<div class="text-center col-md-2 col-sm-3 col-xs-4 t3"><a class="" href="{{url('小米/'.$city)}}" title="小米/Xiaomi官方售后"><s></s><p>小米</p></a></div>
+					<div class="text-center col-md-2 col-sm-3 col-xs-4 t4"><a class="" href="{{url('三星/'.$city)}}" title="三星/Sumsung官方售后"><s></s><p>三星</p></a></div>
+					<div class="text-center col-md-2 col-sm-3 col-xs-4 t5"><a class="" href="{{url('魅族/'.$city)}}" title="魅族/Meizu官方售后"><s></s><p>魅族</p></a></div>
+					<div class="text-center col-md-2 col-sm-3 col-xs-4 t6"><a class="" href="{{url('联想/'.$city)}}" title="联想/Lenovo官方售后"><s></s><p>联想</p></a></div>
+					<div class="text-center col-md-2 col-sm-3 col-xs-4 t7"><a class="" href="{{url('乐视/'.$city)}}" title="乐视官方售后"><s></s><p>乐视</p></a></div>
+					<div class="text-center col-md-2 col-sm-3 col-xs-4 t8"><a class="" href="{{url('金立/'.$city)}}" title="金立官方售后"><s></s><p>金立</p></a></div>
+					<div class="text-center col-md-2 col-sm-3 col-xs-4 t9"><a class="" href="{{url('vivo/'.$city)}}" title="vivo官方售后"><s></s><p>vivo</p></a></div>
+					<div class="text-center col-md-2 col-sm-3 col-xs-4 t10"><a class="" href="{{url('OPPO/'.$city)}}" title="OPPO官方售后"><s></s><p>OPPO</p></a></div>
+					<div class="text-center col-md-2 col-sm-3 col-xs-4 t11"><a class="" href="{{url('美图/'.$city)}}" title="美图官方售后"><s></s><p>美图</p></a></div>
+					<div class="text-center col-md-2 col-sm-3 col-xs-4 t12"><a class="" href="{{url('LG/'.$city)}}" title="LG官方售后"><s></s><p>LG</p></a></div>
+			</div>
 		</div>
 	</div>
 

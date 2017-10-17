@@ -84,20 +84,20 @@ footer{
 	background: #ddd;
 }
 
-.hot-brand td a{
+.hot-brand a{
 	color: #333;
 	width: 100%;
     height: 100%;
     display: block;
     text-decoration: none;
 }
-.hot-brand td a:hover{
+.hot-brand a:hover{
 	-webkit-box-shadow: 0 0 5px #d5d5d5;
     box-shadow: 0 0 5px #d5d5d5;
     color: #cd0200;
     text-decoration: none;
 }
-.hot-brand td s{
+.hot-brand s{
 	width: 100%;
     height: 30px;
     display: block;
@@ -122,9 +122,11 @@ footer{
 }
 .t4 s{
     background: url(../img/snmsung_def.png) no-repeat center;
+    background-size: auto 13px;
 }
 .t4 a:hover s{
     background: url(../img/snmsung_cur.png) no-repeat center;
+    background-size: auto 13px;
 }
 .t5 s{
     background: url(../img/meizu_def.png) no-repeat center;
@@ -134,9 +136,11 @@ footer{
 }
 .t6 s{
     background: url(../img/lenovo_def.png) no-repeat center;
+    background-size: auto 17px;
 }
 .t6 a:hover s{
     background: url(../img/lenovo_cur.png) no-repeat center;
+    background-size: auto 17px;
 }
 .t7 s{
     background: url(../img/ls_def.png) no-repeat center;
@@ -146,9 +150,11 @@ footer{
 }
 .t8 s{
     background: url(../img/gionee_def.png) no-repeat center;
+    background-size: auto 15px;
 }
 .t8 a:hover s{
     background: url(../img/gionee_cur.png) no-repeat center;
+    background-size: auto 15px;
 }
 .t9 s{
     background: url(../img/vivo_def.png) no-repeat center;
@@ -164,11 +170,11 @@ footer{
 }
 .t11 s{
     background: url(../img/meitu_def.png) no-repeat center;
-    background-size: auto 22px;
+    background-size: auto 20px;
 }
 .t11 a:hover s{
     background: url(../img/meitu_cur.png) no-repeat center;
-    background-size: auto 22px;
+    background-size: auto 20px;
 }
 .t12 s{
     background: url(../img/lg_def.png) no-repeat center;

@@ -16,7 +16,7 @@
             <div class="index-header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-9">
+                        <div class="col-xs-12 col-sm-12 col-md-9">
                             <div class="row">
                                 <div class="col-xs-11 col-sm-7" style="white-space: nowrap;">
                                     <h2 class="pull-left" style="margin-right: 20px;margin-top: 14px;"><a href="{{isset($city) ? url('/'.$city) : url('/')}}" style="color: white;text-decoration: none;font-weight: 100;">官方售后信息</a></h2>
