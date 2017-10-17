@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-        <title>@yield('title') 官方售后信息</title>
+        <title>@yield('title') - 真实、可靠</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="keywords" content="@yield('keyword')" />
         <meta name="description" content="@yield('description')" />
@@ -24,6 +24,8 @@
 
                                     @if (isset($city))
                                     {{$city}} <a href="{{url('/cities')}}" style="font-size: 14px;color: rgba(255,255,255, 0.6);">[切换城市]</a>
+                                    @else
+                                    全国  <a href="{{url('/cities')}}" style="font-size: 14px;color: rgba(255,255,255, 0.6);">[切换城市]</a>
                                     @endif
                                 </div>
                                 <div class="col-xs-1 col-sm-5 text-right hidden-xs">

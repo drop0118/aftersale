@@ -16,21 +16,29 @@ class IndexController extends Controller
 
 	public function index(Request $request, Helper $helper, $city = null)
 	{
+		if( !$city && !$this->checkIsRobot() ) {
+			$area_info = $helper->getIpInfo($request->getClientIp());
+			$city = $area_info ? $area_info['city'] : Store::$city_map[0];
+			setcookie('city', $city, 0, '/', $request->header('host'));
+		}
+
 		if( $city && !in_array($city, Store::$city_map) ) {
-			# display brand cities page
+			# display brand home page
 			$brand = Brand::where('name', $city)->first();
 			if(!$brand)
 				return redirect('/');
-			return view('index.brand_city', [
-				'brand' => $brand
+			if( $brand && !$this->checkIsRobot() ) {
+				$area_info = $helper->getIpInfo($request->getClientIp());
+				$city = $area_info ? $area_info['city'] : Store::$city_map[0];
+				return redirect('/'.$brand->name.'/'.$city);
+			}
+			return view('index.brand', [
+				'brand' => $brand,
+				'stores' => $brand->stores,
+				'current_city' => null
 			]);
 		}
-		# make city
-		if( !$city ) {
-			$area_info = $helper->getIpInfo($request->getClientIp());
-			$city = $area_info ? $area_info['city'] : Store::$city_map[0];
-		} 
-		setcookie('city', $city, 0, '/', $request->header('host'));
+
 		# 获取品牌表
 		if( !$brands = Cache::get('index-brands') ){
 			$brands = Brand::get();
@@ -120,7 +128,8 @@ class IndexController extends Controller
 			'brand' 	   => $brand,
 			'stores'	   => $stores,
 			'city_map' 	   => Store::$city_map,
-			'current_city' => $city
+			'current_city' => $city,
+			'city'		   => $city
 		]);
 	}
 

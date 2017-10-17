@@ -1,7 +1,7 @@
 @extends('layout')
-@section('title', $brand->name.$current_city.'官方售后服务热线、维修网点 - ')
-@section('keyword', $brand->name.'官方售后服务,官方授权维修,售后,客服热线,维修电话,维修网点地址,门店,保修,全国联保')
-@section('description', $brand->name.'官方售后服务信息：官方网站、客服热线、维修网点电话和地址信息等。数据真实、安全、可靠，供消费者免费参考。我们支持保护消费者权益，避免消费者在售后服务过程中遇见李鬼。')
+@section('title', '[官方]'.$brand->name.$current_city.'售后服务维修电话 & 网点信息')
+@section('keyword', $brand->name.$current_city.'售后,'.$brand->name.$current_city.'客服电话,'.$brand->name.$current_city.'售后电话,'.$brand->name.$current_city.'售后服务电话,'.$brand->name.$current_city.'官方客服电话,'.$brand->name.$current_city.'售后服务网点,'.$brand->name.$current_city.'维修点,'.$brand->name.$current_city.'售后维修,'.$brand->name.$current_city.'维修电话,'.$brand->name.$current_city.'售后网点,'.$brand->name.$current_city.'官方售后,'.$brand->name.$current_city.'保修,'.$brand->name.$current_city.'全国联保')
+@section('description', $brand->name.$current_city.'的官方售后服务维修电话、售后服务网点地址，以及官网、官博、官方微信号等。信息真实、安全、可靠，供消费者免费参考。')
 @section('content')
 
 <div class="col-sm-12 col-md-9">
@@ -14,8 +14,12 @@
 		<div class="col-md-12">
 			<ol class="breadcrumb">
 				<li><a href="{{url('/'.$current_city)}}">首页</a></li>
+				@if ($current_city)
 				<li><a href="{{url($brand->name)}}">{{$brand->name}}</a></li>
 				<li class="active">{{$brand->name.$current_city}}</li>
+				@else 
+				<li class="active">{{$brand->name.$current_city}}</li>
+				@endif
 			</ol>
 		</div>
 	</div>
@@ -55,7 +59,7 @@
 				</div>
 				<div class="col-xs-12 ">
 					<div class="common-title">
-						<span>{{$stores->total()}}个{{$current_city}}{{$brand->name}}官方售后服务网点</span>
+						<span>{{$current_city ? $stores->total() : count($stores)}}个{{$current_city}}{{$brand->name}}官方售后服务网点</span>
 					</div>
 				</div>
 				<div class="col-xs-12">
@@ -68,11 +72,11 @@
 							</tr>
 						</thead>
 						<tbody>
-						@if ($stores->total())
+						@if (count($stores))
 							@foreach ($stores as $store)
 							<tr>
 								<td style="line-height: 30px;">
-									<a href="{{url($brand->name.'/'.$current_city.'/'.$store->id)}}">
+									<a href="{{$store->getCity() ? url($brand->name.'/'.$store->getCity().'/'.$store->id) : url($brand->name)}}">
 										{{$store->address}}<br />
 										<span class="black-level3">{{$store->name}}</span>
 									</a>
@@ -95,7 +99,7 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="col-xs-12">{{$stores->links()}}</div>
+				<div class="col-xs-12">{{$current_city ? $stores->links() : ''}}</div>
 			</div>
 		</div>
 		

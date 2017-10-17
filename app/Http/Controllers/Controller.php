@@ -16,8 +16,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
+    public $request;
+
     public function __construct(Request $request)
     {
+        $this->request = $request;
         if( !Config::get('app.debug') ) {
             // $request_log = new RequestLog();
             // $request_log->request_ip = $_SERVER['REMOTE_ADDR'];
@@ -28,6 +31,62 @@ class Controller extends BaseController
             // }
             // $request_log->save(); 
         }
+    }
+
+    public function checkIsRobot()
+    {
+        $_spider_maps = [
+			"TencentTraveler", 
+			"Baiduspider+", 
+			"BaiduGame", 
+			"Googlebot", 
+			"msnbot", 
+			"Sosospider+", 
+			"Sogou web spider", 
+			"ia_archiver", 
+			"Yahoo! Slurp", 
+			"YoudaoBot", 
+			"Yahoo Slurp", 
+			"MSNBot", 
+			"Java (Often spam bot)", 
+			"BaiDuSpider", 
+			"Voila", 
+			"Yandex bot", 
+			"BSpider", 
+			"twiceler", 
+			"Sogou Spider", 
+			"Speedy Spider", 
+			"Google AdSense", 
+			"Heritrix", 
+			"Python-urllib", 
+			"Alexa (IA Archiver)", 
+			"Ask", 
+			"Exabot", 
+			"Custo", 
+			"OutfoxBot/YodaoBot", 
+			"yacy", 
+			"SurveyBot", 
+			"legs", 
+			"lwp-trivial", 
+			"Nutch", 
+			"StackRambler", 
+			"The web archive (IA Archiver)", 
+			"Perl tool", 
+			"MJ12bot", 
+			"Netcraft", 
+			"MSIECrawler", 
+			"WGet tools", 
+			"larbin", 
+			"Fish search", 
+		]; 
+		$result = false;
+		foreach ($_spider_maps as $_site) {
+			if( strpos($this->request->server->getHeaders()['USER_AGENT'], strtolower($_site) !== false) ) {
+				$result = true;
+				break;
+			}
+		}
+		return $result;
     }
 
 }
