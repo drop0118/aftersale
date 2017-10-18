@@ -14,6 +14,7 @@ use App\Store;
 		</div>
 	</div>
 	<div class="col-xs-12 col-sm-9 cities_area">
+		<a href="{{url('/')}}?city=all">全国</a>
 		@foreach (Store::$city_map as $_city)
 			<a href="{{url('/'.$_city)}}">{{$_city}}</a>
 		@endforeach

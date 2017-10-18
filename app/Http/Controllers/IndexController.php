@@ -114,7 +114,7 @@ class IndexController extends Controller
 		$query = $brand->stores();
 		if( !$city ) {
 			$area_info = $helper->getIpInfo($request->getClientIp());
-			$city = $area_info ? $area_info['city'] : Store::$city_map[0];
+			$city = $area_info ? $area_info['city'] : null;
 		}
 		if( !in_array($city, Store::$city_map) ) {
 			return redirect('/');

@@ -37,7 +37,7 @@ class Controller extends BaseController
     {
         $_spider_maps = [
 			"TencentTraveler", 
-			"Baiduspider+", 
+			"Baiduspider", 
 			"BaiduGame", 
 			"Googlebot", 
 			"msnbot", 
@@ -81,10 +81,13 @@ class Controller extends BaseController
 		]; 
 		$result = false;
 		foreach ($_spider_maps as $_site) {
-			if( strpos($this->request->server->getHeaders()['USER_AGENT'], strtolower($_site) !== false) ) {
+			if( strpos(strtolower($this->request->server->getHeaders()['USER_AGENT']), strtolower($_site)) !== false ) {
 				$result = true;
 				break;
 			}
+		}
+		if( $this->request->city == 'all') {
+			$result = true;
 		}
 		return $result;
     }
