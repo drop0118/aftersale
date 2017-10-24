@@ -4,9 +4,9 @@
 @section('description', $city.'数千品牌的官方售后服务维修电话、网点地址、官网、官博、官微信息。数据真实、安全、可靠，供消费者免费参考。')
 @section('content')
 
-<div class="col-sm-12 col-md-9">
+<div class="col-sm-12 col-md-12">
 	<div class="row">
-	    <div class="col-xs-12">
+	    <div class="col-xs-12 mt20">
 			<form class="" action="<?php echo url('brand-search');?>">
 				<div class="input-group">
 					<input type="text" name="keyword" class="form-control input-lg" placeholder="输入您想搜索的品牌名称">
@@ -21,8 +21,8 @@
 		</div>
 	</div>
 
-	<div class="row mt20">
-		<div class="col-xs-12">
+	<div class="row mt30">
+		<div class="mt20">
 			<div class="hot-brand">
 					<div class="text-center col-md-2 col-sm-3 col-xs-4 t1"><a class=" " href="{{url('苹果/'.$city)}}" title="苹果/Apple官方售后"><s></s><p>苹果</p></a></div>
 					<div class="text-center col-md-2 col-sm-3 col-xs-4 t2"><a class="" href="{{url('华为/'.$city)}}" title="华为/Huawei官方售后"><s></s><p>华为</p></a></div>

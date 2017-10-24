@@ -16,20 +16,24 @@
             <div class="index-header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-9">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="row">
                                 <div class="col-xs-11 col-sm-7" style="white-space: nowrap;">
-                                    <h2 class="pull-left" style="margin-right: 20px;margin-top: 14px;"><a href="{{isset($city) ? url('/'.$city) : url('/')}}" style="color: white;text-decoration: none;font-weight: 100;">官方售后信息</a></h2>
-                                    @yield('extra_title')
+                                    <h2 class="pull-left" style="margin-right: 20px;margin-top: 14px;font-weight: 100;"><a href="{{isset($city) ? url('/'.$city) : url('/')}}" style="color: white;text-decoration: none;">官方售后查询</a>@if (isset($city) || isset($brand))·{{@$brand->name}}{{@$city}}@endif
+                                    </h2>
 
                                     @if (isset($city))
-                                    {{$city}} <a href="{{url('/cities')}}" style="font-size: 14px;color: rgba(255,255,255, 0.6);">[切换城市]</a>
+                                    <a href="{{url('/cities')}}" style="font-size: 14px;color: rgba(255,255,255, 0.6);">[切换城市]</a>
                                     @else
-                                    全国  <a href="{{url('/cities')}}" style="font-size: 14px;color: rgba(255,255,255, 0.6);">[切换城市]</a>
+                                    <a href="{{url('/cities')}}" style="font-size: 14px;color: rgba(255,255,255, 0.6);">[选择城市]</a>
                                     @endif
                                 </div>
                                 <div class="col-xs-1 col-sm-5 text-right hidden-xs">
-                                    品牌产品官方售后服务信息查询
+                                    @if (isset($brand))
+                                    {{$brand->name}}官方售后维修服务电话、授权维修网点地址等信息
+                                    @else
+                                    品牌产品官方售后维修服务电话、授权维修网点等信息
+                                    @endif
                                 </div>
                             </div>
                         </div>

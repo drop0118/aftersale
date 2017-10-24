@@ -166,7 +166,8 @@ class IndexController extends Controller
 		return view('index.store', [
 			'store' => $store,
 			'brand' => $brand,
-			'current_city' => $city
+			'current_city' => $city,
+			'city' => $city
 		]);
 	}
 

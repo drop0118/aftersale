@@ -107,8 +107,11 @@
 </div>
 <div class="col-md-3 hidden-xs hidden-sm mt20">
 	<!-- taobao ad. -->
-	<a data-type="2" biz-keyword="{{$current_city}}" data-tmpl="220x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#">{{$current_city}}</a>
+	<a data-type="2" biz-keyword="{{$brand->name}}维修" data-tmpl="220x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#">{{$brand->name}}维修</a>
 	<a data-type="2" biz-keyword="{{$brand->name}}" data-tmpl="220x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#">{{$brand->name}}</a>
+	@if ($current_city)
+	<a data-type="2" biz-keyword="{{$current_city}}" data-tmpl="220x290" data-tmplid="9" data-rd="2" data-style="2" data-border="1" href="#">{{$current_city}}</a>
+	@endif
 </div>
 <script type="text/javascript">
     (function(win,doc){
