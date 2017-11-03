@@ -11,7 +11,7 @@ class Store extends Model
 
     public function brands()
     {
-        return $this->belongsToMany('App\Brand');
+        return $this->belongsToMany('App\Brand', 'store_brand_map', 'store_id', 'brand_id');
     }
 
     public static $_city;

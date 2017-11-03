@@ -11,6 +11,11 @@
 |
 */
 
+Route::group(['prefix' => 'weixin'], function(){
+	Route::get('getOpenId', ['uses' => 'WeixinController@getWeixinOpenId']);
+	Route::post('pay', ['uses' => 'WeixinController@postWeixinPay']);
+});
+
 Route::get('/brand-search', ['uses' => 'IndexController@brandSearch']);
 Route::get('/cities', ['uses' => 'IndexController@cities']);
 Route::get('/brands', ['uses' => 'IndexController@brands']);
