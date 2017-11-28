@@ -40,30 +40,30 @@ class IndexController extends Controller
 		}
 
 		# 获取品牌表
-		if( !$brands = Cache::get('index-brands') ){
-			$brands = Brand::get();
-			Cache::put('index-brands', $brands, 86400);
-		}
-		$brand_list = [];
-		foreach ($brands as $_brand) {
-			if(in_array($helper->getFirstCharter($_brand->name), ['A','B','C'])) {
-				(@$brand_list[1][] = $_brand);
-			} elseif(in_array($helper->getFirstCharter($_brand->name), ['D','E','F'])) {
-				(@$brand_list[2][] = $_brand);
-			} elseif(in_array($helper->getFirstCharter($_brand->name), ['G','H','I'])) {
-				(@$brand_list[3][] = $_brand);
-			} elseif(in_array($helper->getFirstCharter($_brand->name), ['J','K','L'])) {
-				(@$brand_list[4][] = $_brand);
-			} elseif(in_array($helper->getFirstCharter($_brand->name), ['M','N','O','P'])) {
-				(@$brand_list[5][] = $_brand);
-			} elseif(in_array($helper->getFirstCharter($_brand->name), ['Q','R','S','T'])) {
-				(@$brand_list[6][] = $_brand);
-			} elseif(in_array($helper->getFirstCharter($_brand->name), ['U','V','W'])) {
-				(@$brand_list[7][] = $_brand);
-			} elseif(in_array($helper->getFirstCharter($_brand->name), ['X','Y','Z'])) {
-				(@$brand_list[8][] = $_brand);
-			}
-		}
+		// if( !$brands = Cache::get('index-brands') ){
+		// 	$brands = Brand::get();
+		// 	Cache::put('index-brands', $brands, 86400);
+		// }
+		// $brand_list = [];
+		// foreach ($brands as $_brand) {
+		// 	if(in_array($helper->getFirstCharter($_brand->name), ['A','B','C'])) {
+		// 		(@$brand_list[1][] = $_brand);
+		// 	} elseif(in_array($helper->getFirstCharter($_brand->name), ['D','E','F'])) {
+		// 		(@$brand_list[2][] = $_brand);
+		// 	} elseif(in_array($helper->getFirstCharter($_brand->name), ['G','H','I'])) {
+		// 		(@$brand_list[3][] = $_brand);
+		// 	} elseif(in_array($helper->getFirstCharter($_brand->name), ['J','K','L'])) {
+		// 		(@$brand_list[4][] = $_brand);
+		// 	} elseif(in_array($helper->getFirstCharter($_brand->name), ['M','N','O','P'])) {
+		// 		(@$brand_list[5][] = $_brand);
+		// 	} elseif(in_array($helper->getFirstCharter($_brand->name), ['Q','R','S','T'])) {
+		// 		(@$brand_list[6][] = $_brand);
+		// 	} elseif(in_array($helper->getFirstCharter($_brand->name), ['U','V','W'])) {
+		// 		(@$brand_list[7][] = $_brand);
+		// 	} elseif(in_array($helper->getFirstCharter($_brand->name), ['X','Y','Z'])) {
+		// 		(@$brand_list[8][] = $_brand);
+		// 	}
+		// }
 
 		# 静态内容
 		$city_config = ['北京','上海','广州','深圳','南京','武汉','沈阳','西安','成都','重庆','杭州','青岛','大连','宁波','济南','哈尔滨','长春','厦门','郑州','长沙','福州','乌鲁木齐','昆明','兰州','苏州','无锡','南昌','贵阳','南宁','合肥','太原','石家庄','呼和浩特','佛山','东莞','唐山','烟台','泉州','包头'];
@@ -88,7 +88,7 @@ class IndexController extends Controller
 
 		return view('index.index', [
 			'city' => $city,
-			'brand_list' 	   => $brand_list,
+			// 'brand_list' 	   => $brand_list,
 			'last_search_list' => $last_search_list
 		]);
 	}

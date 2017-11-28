@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 use App\Store;
 use App\Brand;
 
@@ -57,16 +58,25 @@ class ManualSubmitUrl extends Command
     public function getAllUrls()
     {
     	$domain = 'http://www.shouhou.me';
-    	$brands = Brand::get();
-    	$result = [
-    		$domain.'/',
-    	];
-    	foreach (Store::$city_map as $_city) {
-    		$result[] = $domain.'/'.$_city;
-    	}
-    	foreach ($brands as $_brand) {
-    		$result[] = $domain.'/'.$_brand->name;
-    	}
+    	$stores = Store::get();
+    	$result = "";
+    	// foreach (Store::$city_map as $_city) {
+    	// 	$result[] = $domain.'/'.$_city;
+    	// }
+        $j = 1;
+        Store::with('brands')->chunk(10000, function($stores) use ($domain, &$result, &$j) {
+            foreach ($stores as $_store) {
+                if( $_city = $_store->getCity() ) {
+                    $result .= $domain.'/'.$_store->brands[0]->name.'/'.$_city.'/'.$_store->id."\n";
+                }
+            }
+            echo $j."\n";
+            Storage::disk('local')->put('store-'.$j.'.txt', $result);
+            $j++;
+            $result = "";
+        });
+        echo 'done';exit;
+        
     	return $result;
     }
 }
