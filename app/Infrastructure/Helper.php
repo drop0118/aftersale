@@ -6,9 +6,8 @@ class Helper
 
 	public function getIpInfo($ip)
 	{
-        return false;
 		$request_data = file_get_contents('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js&ip='.$ip);
-		if($request_data != '-3' && $request_data != '-2') {
+		if( $request_data && $request_data != '-3' && $request_data != '-2') {
 			preg_match('/({.+})/iu', $request_data, $matches);
 			$data = json_decode($matches[1]);
 			if(property_exists($data, 'country') && property_exists($data, 'province') && property_exists($data, 'city')) {
